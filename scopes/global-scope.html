@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scopes Demonstration</title>
+</head>
+<body>
+    Demostration of Scopes
+    <ul>
+        <li>Global Scopes</li>
+        <li>Function Scopes</li>
+        <li>Block Scopes</li>
+        <li>Lexical Scpoing</li>
+    </ul>
+
+    <p>Press inspect to see the console logs</p>
+</body>
+<script>
+    ///////////////////////////// Global Scoping
+    /////////////////////////////////////
+    // NOTES : The globally declared variable can be used globally as well as in function scope
+    //
+    //
+    console.log(" Global Scope example starts");
+    var globalScope = "Im Global";
+    function testGlobal () {
+        console.log(globalScope); 
+    }
+    testGlobal();
+    console.log(globalScope);
+
+
+
+
+
+    ///////////////////////////// Function Scoping
+    /////////////////////////////////////
+    // NOTES : The Functionly declared variable can be used only in that function scope but not outside
+    //
+    //
+    console.log(" Function Scope example starts");
+
+    function testFunc() {
+        let funcScope = "Im Function scope using let";
+    }
+ //   console.log(funcScope); // gives an error if we access elements inside the scope
+    
+
+
+
+
+    ///////////////////////////// Block Scoping
+    /////////////////////////////////////
+    //NOTES : 
+    // 1)Elements cant be accessed outside the block if declared with let and const
+    // 2)ELemenst can be acceesed for  declarations with var
+
+    console.log(" Block Scope example starts");
+    if(true){
+        let blockScopeElement1 = "Im in Block Scope declared as let";
+
+        var blockScopeElement2 = "Im in Block Scope declared as var";
+        
+        const blockScopeElement3 = "Im in Block Scope declared as const";
+
+    }
+
+   // console.log(blockScopeElement1); // gives an error
+    console.log(blockScopeElement2);
+  //  console.log(blockScopeElement3);//gives an error
+  
+
+
+</script>
+</html>
