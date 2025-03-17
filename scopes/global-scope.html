@@ -11,7 +11,9 @@
         <li>Global Scopes</li>
         <li>Function Scopes</li>
         <li>Block Scopes</li>
-        <li>Lexical Scpoing</li>
+        <li>Lexical Scopoing</li>
+        <li>Closures Scopoing</li>
+        <li>Lexical Scopoing vs Closures</li>
     </ul>
 
     <p>Press inspect to see the console logs</p>
@@ -44,7 +46,7 @@
     function testFunc() {
         let funcScope = "Im Function scope using let";
     }
- //   console.log(funcScope); // gives an error if we access elements inside the scope
+    // console.log(funcScope); // gives an error if we access elements inside the scope
     
 
 
@@ -59,18 +61,34 @@
     console.log(" Block Scope example starts");
     if(true){
         let blockScopeElement1 = "Im in Block Scope declared as let";
-
         var blockScopeElement2 = "Im in Block Scope declared as var";
-        
         const blockScopeElement3 = "Im in Block Scope declared as const";
-
     }
 
    // console.log(blockScopeElement1); // gives an error
     console.log(blockScopeElement2);
   //  console.log(blockScopeElement3);//gives an error
-  
 
+
+///////////////////////////// Lexical Scoping vs Clousres using counter
+    /////////////////////////////////////
+    console.log("Lexical Scoping with counters");
+    function outer() {
+        let count =0;
+    
+        function inner() {  
+            count++;
+            console.log(count);            
+        }
+        inner();  // Call the inner function
+    }
+    outer(); 
+    outer();//it resets and dont remember
+
+    console.log("Closures with counters");
+    
+   
+    
 
 </script>
 </html>
