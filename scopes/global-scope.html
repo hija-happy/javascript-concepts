@@ -12,7 +12,6 @@
         <li>Function Scopes</li>
         <li>Block Scopes</li>
         <li>Lexical Scopoing</li>
-        <li>Closures Scopoing</li>
         <li>Lexical Scopoing vs Closures</li>
     </ul>
 
@@ -70,6 +69,24 @@
   //  console.log(blockScopeElement3);//gives an error
 
 
+
+  
+///////////////////////////// Lexical Scoping
+    /////////////////////////////////////
+  console.log("Lexical Scoping");
+    function outer() {
+        let message = "Hello from outer scope!";  // define the variable
+    
+        function inner() {  
+            console.log(message);  // print the message inside the outer (it wot be printed)
+            console.log(count);            
+        }
+    
+        inner();  // Call the inner function
+    }
+    outer();
+    outer();
+
 ///////////////////////////// Lexical Scoping vs Clousres using counter
     /////////////////////////////////////
     console.log("Lexical Scoping with counters");
@@ -84,8 +101,6 @@
     }
     outer(); 
     outer();//it resets and dont remember
-
-    console.log("Closures with counters");
     
    
     

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Memoization</title>
+</head>
+<body>
+Memoization for multiplication
+</body>
+<script>
+
+    const memoProduct = () => {
+        const cache = {};
+
+        return (num) => {
+            if (num in cache){
+                console.time("Cache")
+                console.log(cache);
+                console.timeEnd("Cache")
+                return cache[num];
+            }   
+
+            console.time("Product");
+            const result = num*10;
+            cache[num]=result;
+            console.timeEnd("Product")
+            return result;
+        }
+    }
+    const result = memoProduct();
+    console.time("RES");
+    console.log(result(10));
+    console.timeEnd("RES")
+    console.time("ONE");
+    console.log(result(10));
+    console.timeEnd("ONE");
+    console.log(result(20));
+    console.log(result(10));
+    console.log(result(100));
+    console.log(result(100));
+    console.log(result(100));
+
+
+    
+</script>
+</html>

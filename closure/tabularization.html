@@ -1,0 +1,45 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>tabularization</title>
+</head>
+<body>
+    
+
+
+</body>
+
+<script>
+
+  /*  Without Tabularisation
+
+ function factorial(n) {
+    if (n === 0 || n === 1) return 1; // Base case
+    return n * factorial(n - 1); // Recursive call
+}
+
+console.log(factorial(5)); // Output: 120
+console.log(factorial(10)); // Output: 3628800
+
+    Time Complexity: O(n)
+    Space Complexity: O(n) (Due to recursion stack)
+    */
+
+
+    // WITH TABULARISATION factorial
+
+    function factorialTabulation(n) {
+        let factTable = [1]; // Base case: 0! = 1
+    
+        for (let i = 1; i <= n; i++) {
+            factTable[i] = factTable[i - 1] * i;
+        }
+        return factTable[n];
+        console.log(factTable)
+    }
+    console.log(factorialTabulation(5));
+</script>
+</html>
